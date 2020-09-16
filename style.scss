@@ -1,0 +1,46 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.container {
+  width: 85%;
+  margin: 0 auto;
+  background-color: brown;
+}
+
+#grid-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  padding: 20px;
+
+  .grid {
+    width: calc(100% / 7);
+    height: 150px;
+    border: 1px solid;
+    margin: 2px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .number {
+      font-size: 25px;
+      font-weight: 500;
+    }
+  }
+
+  .yellow {
+    background-color: yellow;
+  }
+
+  .green {
+    background-color: green;
+  }
+}
+
+#grid-template {
+  display: none;
+}
