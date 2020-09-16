@@ -22,13 +22,14 @@ $(function () {
         return "green";
     }
 
-    $(document).on("click", ".grid", function () {
-        var thisGrid = $(this);
+
+    const test = thisGrid => {
         $.ajax(
             {
                 url: "https://flynn.boolean.careers/exercises/api/random/int",
                 method: "GET",
                 success: function (data, stato) {
+                    $(thisGrid).removeClass("yellow, green");
                     $(thisGrid).addClass(color(data.response));
                     $(thisGrid).children(".number").html(data.response);
                 },
@@ -37,6 +38,18 @@ $(function () {
                 }
             }
         );
+    }
+
+
+
+    $(document).on("click", ".grid", function () {
+        var thisGrid = $(this);
+        test(thisGrid);
+    });
+
+    $(document).on("mouseenter", ".grid", function () {
+        var thisGrid = $(this);
+        test(thisGrid);
     });
 
 
