@@ -23,7 +23,7 @@ $(function () {
     }
 
 
-    const test = thisGrid => {
+    const ajaxCall = thisGrid => {
         $.ajax(
             {
                 url: "https://flynn.boolean.careers/exercises/api/random/int",
@@ -44,12 +44,12 @@ $(function () {
 
     $(document).on("click", ".grid", function () {
         var thisGrid = $(this);
-        test(thisGrid);
+        ajaxCall(thisGrid);
     });
 
     $(document).on("mouseenter", ".grid", function () {
         var thisGrid = $(this);
-        test(thisGrid);
+        ajaxCall(thisGrid);
     });
 
 
