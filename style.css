@@ -26,7 +26,7 @@
   padding: 20px;
 }
 
-#grid-container .grid {
+#grid-container .box {
   width: calc(100% / 7);
   height: 150px;
   border: 1px solid;
@@ -42,7 +42,7 @@
           align-items: center;
 }
 
-#grid-container .grid .number {
+#grid-container .box .number {
   font-size: 25px;
   font-weight: 500;
 }
@@ -55,7 +55,7 @@
   background-color: green;
 }
 
-#grid-template {
+#box-template {
   display: none;
 }
 /*# sourceMappingURL=style.css.map */

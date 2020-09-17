@@ -2,11 +2,11 @@
 $(function () {
 
 
-    // funzione che genera una griglia custum in base ai valori di lunghezza e altezza passati
+    // funzione che genera una griglia custom in base ai valori di lunghezza e altezza passati
     const genGrid = (lunghezza, altezza) => {
         for (let i = 0; i < lunghezza * altezza; i++) {
-            var gridClone = $("#grid-template > .grid").clone();
-            $("#grid-container").append(gridClone);
+            var boxClone = $("#box-template > .box").clone();
+            $("#grid-container").append(boxClone);
         }
     }
 
@@ -22,18 +22,18 @@ $(function () {
     };
 
     //funzione per richiamare una chiamata ajax
-    const ajaxCall = thisGrid => {
+    const ajaxCall = thisBox => {
         $.ajax(
             {
                 url: "https://flynn.boolean.careers/exercises/api/random/int",
                 method: "GET",
                 success: function (data, stato) {
                     //rimuovo le classi esistenti
-                    $(thisGrid).removeClass("yellow, green");
+                    $(thisBox).removeClass("yellow, green");
                     //aggiungo la classe in base al risultato della funzione "color"
-                    $(thisGrid).addClass(color(data.response));
+                    $(thisBox).addClass(color(data.response));
                     //inserisco il data.response all'interno del tag span
-                    $(thisGrid).children("span.number").text(data.response);
+                    $(thisBox).children("span.number").text(data.response);
                 },
                 error: function (richiesta, stato, errori) {
                     alert("E' avvenuto un errore. ");
@@ -43,15 +43,15 @@ $(function () {
     };
 
     //al click
-    $(document).on("click", ".grid", function () {
-        var thisGrid = $(this);
-        ajaxCall(thisGrid);
+    $(document).on("click", ".box", function () {
+        var thisBox = $(this);
+        ajaxCall(thisBox);
     });
 
     //al mouse enter
-    $(document).on("mouseenter", ".grid", function () {
-        var thisGrid = $(this);
-        ajaxCall(thisGrid);
+    $(document).on("mouseenter", ".box", function () {
+        var thisBox = $(this);
+        ajaxCall(thisBox);
     });
 
 

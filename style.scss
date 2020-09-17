@@ -17,7 +17,7 @@
   flex-wrap: wrap;
   padding: 20px;
 
-  .grid {
+  .box {
     width: calc(100% / 7);
     height: 150px;
     border: 1px solid;
@@ -41,6 +41,6 @@
   }
 }
 
-#grid-template {
+#box-template {
   display: none;
 }
